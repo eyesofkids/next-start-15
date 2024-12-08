@@ -2,24 +2,23 @@
 'use client'
 
 import { getUsers } from './_actions'
-import { useTransition, useState } from 'react'
+import { useActionState, useTransition } from 'react'
 
 export default function Page() {
+  const [state, formAction] = useActionState(getUsers, [])
   const [isPending, startTransition] = useTransition()
-  const [state, setState] = useState([])
 
   console.log(isPending)
 
-  const handleClick = () => {
-    startTransition(async () => {
-      const users = await getUsers()
-      setState(users)
-    })
-  }
-
   return (
     <>
-      <button onClick={handleClick}>get Users</button>
+      <button
+        onClick={() => {
+          startTransition(formAction)
+        }}
+      >
+        get Users
+      </button>
       <ul>
         {state.map((user, i) => (
           <li key={i}>{user.username}</li>
