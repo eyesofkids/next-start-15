@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "username": "herry",
+    "password": "11111",
+    "email": "herry@test.com",
+    "emailValidated": true
+  },
+  {
+   "id": 2,
+    "username": "ginny",
+    "password": "22222",
+    "email": "ginny@test.com",
+    "emailValidated": true
+  },
+  {
+    "id": 3,
+    "username": "mione",
+    "password": "33333",
+    "email": "mione@test.com",
+    "emailValidated": true
+  }
+]
